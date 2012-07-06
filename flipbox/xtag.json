@@ -1,0 +1,15 @@
+{	
+	"name": "Flipbox",
+	"tagName": "x-flipbox",
+	"version": "0.0.1",	
+	"description": "The flipbox tag allows you to flip a content element with a CSS Animation to the other side to view additional content. An example use of flipbox, would be to flip and app's content to reveal a settings panel",
+	"images": ["test.com/images/screen1.png"],	
+	"categories": ["structural"],
+	"compatibility": {	
+		"firefox": 5,
+		"chrome": 4,
+		"opera": 12,
+		"android": 2.1,
+		"ios": 4
+	}
+}
