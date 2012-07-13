@@ -1,0 +1,16 @@
+{	
+	"name": "Accordion",
+	"tagName": "x-accordion",
+	"version": "0.0.1",	
+	"description": "An accordion is a collection of panels containing content separated by toggler elements.",
+	"images": [],	
+	"categories": ["structural"],
+	"compatibility": {	
+		"firefox": 5,
+		"chrome": 4,
+		"ie": 9,
+		"opera": 12,
+		"android": 2.1,
+		"ios": 4, 
+	}
+}

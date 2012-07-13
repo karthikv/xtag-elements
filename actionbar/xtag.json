@@ -1,0 +1,16 @@
+{	
+	"name": "Action Bar",
+	"tagName": "x-actionbar",
+	"version": "0.0.1",	
+	"description": "An iconified navigation that fire user-defined actions.",
+	"images": [],	
+	"categories": ["navigation"],
+	"compatibility": {	
+		"firefox": 5,
+		"chrome": 4,
+		"ie": 9,
+		"opera": 12,
+		"android": 2.1,
+		"ios": 4, 
+	}
+}
