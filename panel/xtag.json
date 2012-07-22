@@ -1,0 +1,16 @@
+{	
+	"name": "Panel",
+	"tagName": "x-panel",
+	"version": "0.0.1",	
+	"description": "A panel is a block element that has the ability to load data asynchronously when a src attribute is set (same-origin policy restricted).",
+	"images": [],	
+	"categories": ["structural"],
+	"compatibility": {	
+		"firefox": 5,
+		"chrome": 4,
+		"ie": 9,
+		"opera": 12,
+		"android": 2.1,
+		"ios": 4, 
+	}
+}

@@ -1,0 +1,16 @@
+{	
+	"name": "Auto Suggest",
+	"tagName": "x-autosuggest",
+	"version": "0.0.1",	
+	"description": "An autosuggest input provides automated hints and completion of textual value based on keyboard input.",
+	"images": [],	
+	"categories": ["input"],
+	"compatibility": {	
+		"firefox": 5,
+		"chrome": 4,
+		"ie": 9,
+		"opera": 12,
+		"android": 2.1,
+		"ios": 4, 
+	}
+}

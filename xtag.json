@@ -1,7 +1,15 @@
 {
-    "xtags":[
-    	"flipbox",
+	"xtags":[
+		"accordian"
+		"actionbar",
+		"autosuggest",
+		"flipbox",
 		"map", 
-		"pager"
-    ]
+		"modal",
+		"overlay",
+		"pager",
+		"panel",
+		"slidebox",
+		"tabbox",
+	]
 }
