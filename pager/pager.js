@@ -39,7 +39,8 @@ xtag.register('x-pager', {
 				if (this.getAttribute('data-pager-element') == z) var isNum = data.current_page = pos[z];
 			}				
 			if (!isNum) data.current_page = Number(this.innerHTML) ;            
-			this.parentElement['data-current-page'] = data.current_page;		
+			this.parentElement['data-current-page'] = data.current_page;			
+			xtag.fireEvent(this, 'pagechanged');
 		}
 	},
 	onInsert: function(){           

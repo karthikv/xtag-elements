@@ -12,5 +12,25 @@
 		"opera": 12,
 		"android": 2.1,
 		"ios": 4
+	},
+	"documentation":{
+		"description": "",		
+		"attributes": {
+			"data-current-page": true
+		},
+		"events": {
+			"pagechanged": "Fired when user clicks on a different page number or previous/next/first/last."
+		},
+		"methods": {
+
+		}, 
+		"getters": {
+
+		},
+		"setters": {
+			"data-current-page":{
+				"description": "Sets the attribute, refreshes the pager and fires pagechanged event.",
+			}
+		} 
 	}
 }
