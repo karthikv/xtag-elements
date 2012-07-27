@@ -2,6 +2,9 @@
 
 Mozilla-supported library of X-Tag custom elements
 
+## Best Practices
+Please review our [best practices](xtag-elements/blob/master/best-practices.md) guide before contributing to xtag-elements.
+
 ## Completed
 * accordion
 * actionbar
@@ -30,4 +33,5 @@ Mozilla-supported library of X-Tag custom elements
 * toggle-switch
 
 
-Contributions are welcome.  Please read our [best practices](xtag-elements/blob/master/best-practices.md) before starting any development on tags. Check out x-tag-specs-jul25.pdf for a basic spec of each control.
+Contributions are welcome.  Please read our [best practices](xtag-elements/blob/master/best-practices.md) before starting any development on tags. 
+Check out x-tag-specs-jul25.pdf for a basic spec of each control.
