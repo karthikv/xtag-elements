@@ -30,4 +30,4 @@ Mozilla-supported library of X-Tag custom elements
 * toggle-switch
 
 
-Contributions are welcome.  Check out x-tag-specs-jul25.pdf for a basic spec of each control.
+Contributions are welcome.  Please read our [best practices](best-practices.md) before starting any development on tags. Check out x-tag-specs-jul25.pdf for a basic spec of each control.
