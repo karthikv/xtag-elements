@@ -17,6 +17,7 @@
 
 * We are looking into how to automate testing of each element.  We will probably end up using a combination of Selenium and nodejs scripts to ensure functionality. TBD
 * Currently cross browser/platform testing can be achieved using browserstack.com
+
 ### Dependancies
 * Do not depend on, or include, a Javascript library or framework like jQuery, MooTools etc.
 * Modular dependancies that are *entirely specific* to the function of the tag being deleveloped (such as a map element) are acceptible if included within the tag definition's closure.
