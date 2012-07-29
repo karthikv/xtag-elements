@@ -27,7 +27,7 @@
 * Use  the 'content' property with an HTML strings to adding basic, default, internal elements to your tags. Use onCreate if you need more advanced  control over adding default elements or manipulating initial markup that  was added by the end user.
 * Use attributes beginning with "data-" to allow users to set options that your tag will use on initial parse. (using "data-" prevents conflicts with future, standard HTML attributes)
 * Utilize getters and setters to provide users with ways to modify the behavior or state of a custom tag in the DOM and retrieve useful state information. Be sure to set a matching attribute, if applicable, to reflect in markup any state changes that occur.
-* The 'events' object available within the tag registration object provides a few common event pseudos to help ease development. One of these is :delegate(.someSelector). The delegation pseudo takes a CSS selector and automatically sets the 'this' reference of the function you provide to the correct element that matches the selector.
+* The 'events' object available within the tag registration object provides a few common event pseudos to help ease development. One of these is ':delegate(.someSelector)'. The delegation pseudo takes a CSS selector string and automatically sets the internal 'this' reference of the provided function to match the target element.
 * All events should be attached to the tag element itself, and use delegation wherever event interaction on a sub element is desired.
 
 
