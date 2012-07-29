@@ -1,6 +1,4 @@
-# Developer Best Practices
-
-## BASIC CONCEPTS OF CUSTOM TAG DEVELOPMENT
+# Basic Concepts & Best Practices of Custom Tag Development
 
 ### Browser Support Requirements
 
