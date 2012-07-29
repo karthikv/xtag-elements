@@ -1,9 +1,9 @@
 # xtag-elements
 
-Mozilla-supported library of X-Tag custom elements
+Mozilla-supported library of custom HTML elements
 
 ## Best Practices
-Please review our [best practices](xtag-elements/blob/master/best-practices.md) guide before contributing to xtag-elements.
+Please review and follow our [best practices](xtag-elements/blob/master/best-practices.md) when contributing to the project. All pull requests will be reviewed for adherance.
 
 ## Completed
 * accordion
