@@ -1,0 +1,3 @@
+[submodule "lib/x-tag"]
+	path = lib/x-tag
+	url = git@github.com:mozilla/x-tag.git

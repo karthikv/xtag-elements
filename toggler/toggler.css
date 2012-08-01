@@ -1,0 +1,6 @@
+x-toggler[data-toggle-hide="true"] {
+	display: inline-block;
+}
+[data-toggle-hide="true"] {
+	display: none;
+}
