@@ -1,6 +1,3 @@
-x-toggler[data-toggle-hide="true"] {
-	display: inline-block;
-}
-[data-toggle-hide="true"] {
+[data-toggle-hide=""] {
 	display: none;
 }

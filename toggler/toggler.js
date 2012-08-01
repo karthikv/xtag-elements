@@ -1,39 +1,40 @@
 (function(){
 
 	var attr = 'data-toggle-hide';
+	var toggleState = 'data-toggle-state';
 
-	var getTarget = function(){
-		var target = this.getAttribute('for');
-		if (!target){
-			target = this.nextElementSibling;
+	var getTargets = function(){
+		var target = this.getAttribute('data-targetset').split(' ');
+		var targets = [];
+		if (target.length){
+			target.forEach(function(item){
+				var e = document.getElementById(item);
+				if (e)targets.push(e);
+			});
 		} else {
-			target = document.getElementById(target);
+			targets.push(this.nextElementSibling);
 		}
-		return target;
+		return targets;
 	}
 
 	var toggle = function(){
-		var target = getTarget.call(this);
-		if (target){
-			if (target.getAttribute(attr)){
-				target.removeAttribute(attr);
-				this.removeAttribute(attr);
-			} else { 
-				target.setAttribute(attr, 'true');
-				this.setAttribute(attr, 'true');
+		var targets = getTargets.call(this);
+		targets.forEach(function(item){
+			if (item.attributes[attr]){
+				item.removeAttribute(attr);
+			} else {
+				item.setAttribute(attr, null);
 			}
-		}
+		});
 	}
 
-	var init = function(){
-		var target = getTarget.call(this);
-		if (target && target.getAttribute(attr) == 'true'){
-			this.setAttribute(attr, 'true');
-		}
-	}
-
-	xtag.addEvent(document, 'click:delegate(x-toggler)', function(e){		
+	xtag.addEvent(document, 'click:delegate(x-toggler)', function(e){
 		toggle.call(this);
+		if (this.attributes[toggleState] && this.getAttribute(toggleState) == 'open'){
+			this.setAttribute(toggleState,'close');
+		} else {
+			this.setAttribute(toggleState,'open');
+		}
 	});
 
 
@@ -42,16 +43,23 @@
 			this.setAttribute('tabindex', 0);
 		},
 		onInsert: function(){
-			init.call(this);
+			if (this.attributes[toggleState]){
+				var targets = getTargets.call(this);
+				targets.forEach(function(item){
+					if (force == 'open'){
+						item.removeAttribute(attr);
+					} else if (force == 'close') { 
+						item.setAttribute(attr, null);
+					}
+				});
+			}
 		},
 		setters: {
-			'for:attribute(for)': function(){				
-				init.call(this);
-			},
+			
 		},
 		getters: {
-			'toggled': function(){
-				return this.getAttribute(attr) == 'true' ? false : true;
+			'state': function(){
+				return this.getAttribute(targetState);
 			}
 		},
 		methods: {
