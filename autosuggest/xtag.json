@@ -2,6 +2,7 @@
 	"name": "Auto Suggest",
 	"tagName": "x-autosuggest",
 	"version": "0.0.1",	
+	"author": "Daniel Buchner",
 	"description": "An autosuggest input provides automated hints and completion of textual value based on keyboard input.",
 	"images": [],	
 	"categories": ["input"],

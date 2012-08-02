@@ -1,7 +1,8 @@
 {	
 	"name": "Slidebox",
 	"tagName": "x-slidebox",
-	"version": "0.0.1",	
+	"version": "0.0.1",
+	"author": "Arron Schaar, Daniel Buchner",
 	"description": "A container that allows animated transitions between content panes. Slide Box supports horizontal and vertical transitions.",
 	"images": [],	
 	"categories": ["structural"],

@@ -2,6 +2,7 @@
 	"name": "Overlay",
 	"tagName": "x-overlay",
 	"version": "0.0.1",	
+	"author": "Arron Schaar, Daniel Buchner",
 	"description": "A transparent overlay that can be used in any element",
 	"images": [],	
 	"categories": ["structural"],

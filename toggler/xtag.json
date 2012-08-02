@@ -2,6 +2,7 @@
 	"name": "Element Visibility Toggler",
 	"tagName": "x-toggler",
 	"version": "0.0.1",
+	"author": "Arron Schaar",
 	"description": "Toggles an elements visibility.  By default the togglers works on the next sibling or a list of element IDs in the data-targetset attribute.",
 	"images": [],	
 	"categories": ["structural"],

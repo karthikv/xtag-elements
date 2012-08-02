@@ -1,7 +1,8 @@
 {	
 	"name": "Action Bar",
 	"tagName": "x-actionbar",
-	"version": "0.0.1",	
+	"version": "0.0.1",
+	"author": "Daniel Buchner",
 	"description": "An iconified navigation that fire user-defined actions.",
 	"images": [],	
 	"categories": ["navigation"],

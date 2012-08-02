@@ -2,6 +2,7 @@
 	"name": "Leaflet Map",
 	"tagName": "x-map",
 	"version": "0.0.1",	
+	"author": "Daniel Buchner",
 	"description": "The map tag provides an simple declaritive way to include an interactive map element in your pages, all you need is a CloudMade API key!",
 	"images": ["http://leaflet.cloudmade.com/docs/images/logo.png"],	
 	"categories": ["media"],
