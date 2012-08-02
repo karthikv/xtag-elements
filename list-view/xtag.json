@@ -3,8 +3,9 @@
 	"tagName": "x-listview",
 	"version": "0.0.1",	
 	"description": "A list of selection headers with nested items",
+	"author": "Arron Schaar",
 	"images": [],	
-	"categories": [],
+	"categories": ["structural"],
 	"compatibility": {	
 		"firefox": 5,
 		"chrome": 4,

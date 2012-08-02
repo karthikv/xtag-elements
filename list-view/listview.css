@@ -1,0 +1,25 @@
+x-listview {
+	display: block;
+	overflow: auto;
+	padding: 4px;
+}
+
+x-listview > dl{
+	margin: 0;
+	padding: 0;
+}
+
+x-listview > dl > dt {
+	font-size: 1.5em;
+	border-bottom: solid 1px #000;
+	margin-bottom: 5px;
+	padding-left:10px;
+	line-height: 1em;
+}
+
+x-listview > dl > dd {
+	font-size: 1em;
+	margin: 0;
+	padding: 1px 0 0 10px;
+	border-bottom: solid 1px #ddd;
+}
