@@ -6,10 +6,10 @@
 	var getTargets = function(){
 		var targetset = this.getAttribute('data-targetset');
 		if (targetset) {
-			var targets = targetset.split(' ');
-			targets.forEach(function(item, i){
+			var targets = [];
+			targetset.split(' ').forEach(function(item, i){
 				var element = document.getElementById(item);
-				element ? targets[i] = element : delete targets[i];
+				if (element) targets.push(element);
 			});
 		}
 		return targets || [this.nextElementSibling];
