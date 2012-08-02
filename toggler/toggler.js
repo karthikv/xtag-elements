@@ -35,9 +35,15 @@
 			this.setAttribute('tabindex', 0);
 		},
 		onInsert: function(){
-			if (this.attributes[toggleState]){
-				getTargets.call(this).forEach(function(item){
-					flipState.call(this);
+			var force = this.attributes[toggleState] ? this.getAttribute(toggleState) : false;
+			if (force){
+				var targets = getTargets.call(this);
+				targets.forEach(function(item){
+					if (force == 'open'){
+						item.removeAttribute(attr);
+					} else if (force == 'close') { 
+						item.setAttribute(attr, null);
+					}
 				});
 			}
 		},
@@ -50,7 +56,10 @@
 			}
 		},
 		methods: {
-			toggle: toggle
+			toggle: function(){
+				toggle.call(this);
+				flipState.call(this);
+			}
 		}
 	});
 
