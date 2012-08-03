@@ -13,8 +13,8 @@
 		
 		<style type="text/css">
 
-			#listview1{
-				height: 80px;
+			x-listview{
+				height: 150px;
 				border: solid 1px #ddd;
 			}
 
@@ -24,7 +24,48 @@
 	
 <body>
 
-	<!--  Listview wrapping a DL -->
+
+	<!--  Listview exclusively using x-tags -->
+	<x-listview id="listview3">
+		<x-section>
+			<x-header>Section 3</x-header>
+			<x-listitem>item 1</x-listitem>
+			<x-listitem>item 2</x-listitem>
+		</x-section>
+		<x-section title="Section 4">			
+			<x-listitem>item 3</x-listitem>
+			<x-listitem>item 4</x-listitem>
+		</x-section>
+		<x-section title="Section 5">			
+			<x-listitem>item 5</x-listitem>
+			<x-listitem>item 6</x-listitem>
+		</x-section>
+		<x-section title="Section 6">			
+			<x-listitem>item 7</x-listitem>
+			<x-listitem>item 8</x-listitem>
+		</x-section>
+	</x-listview>
+
+<br />
+<br />
+<br />
+<br />
+
+	<!--  Listview exclusively using x-tags without sections -->
+	<x-listview id="listview4">
+		<x-listitem>item 1</x-listitem>
+		<x-listitem>item 2</x-listitem>
+		<x-listitem>item 3</x-listitem>
+		<x-listitem>item 4</x-listitem>
+	</x-listview>
+
+
+<br />
+<br />
+<br />
+<br />
+
+
 	<x-listview id="listview1">
 		<dl>
 			<dt>Section 1</dt>
@@ -43,46 +84,31 @@
 			<dd>
 				Item 5
 			</dd>
+			<dd>
+				Item 6
+			</dd>
+			<dd>
+				Item 7
+			</dd>
+			<dd>
+				Item 8
+			</dd>
+			<dd>
+				Item 9
+			</dd>
+			<dd>
+				Item 10
+			</dd>
 		</dl>
 	</x-listview>
 
 
-	<!--  Listview wrapping sections-->
-	<x-listview id="listview2">
-		<section>
-			<h1>Section 2</h1>
-			<ul>
-				<li>item 1</li>
-				<li>item 2</li>
-			</ul>
-		</section>
-	</x-listview>
+<br />
+<br />
+<br />
+<br />
 
-
-	<!--  Listview exclusively using x-tags -->
-	<x-listview id="listview3">
-		<x-section>
-			<x-header>Section 3</x-header>
-			<x-listitem>item 1</x-listitem>
-			<x-listitem>item 2</x-listitem>
-		</x-section>
-		<x-section title="Section 4">			
-			<x-listitem>item 1</x-listitem>
-			<x-listitem>item 2</x-listitem>
-		</x-section>
-	</x-listview>
-
-
-	<!--  Listview exclusively using x-tags without sections -->
-	<x-listview id="listview4">
-		<x-listitem>item 1</x-listitem>
-		<x-listitem>item 2</x-listitem>
-		<x-listitem>item 3</x-listitem>
-		<x-listitem>item 4</x-listitem>
-	</x-listview>
-
-
-	<!--  Listview using data item template -->
+	<!--  Listview using data item template, not yet defined -->
 	<x-listview id="listview4">
 		<x-itemtemplate>
 			<h1>{title}</h1>

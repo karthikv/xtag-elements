@@ -4,22 +4,27 @@ x-listview {
 	padding: 4px;
 }
 
-x-listview > dl{
+x-listview > x-section{
 	margin: 0;
 	padding: 0;
 }
 
-x-listview > dl > dt {
+x-listview > x-section > x-header {
 	font-size: 1.5em;
 	border-bottom: solid 1px #000;
 	margin-bottom: 5px;
 	padding-left:10px;
 	line-height: 1em;
+	display: block;
 }
 
-x-listview > dl > dd {
+x-listview x-listitem {
 	font-size: 1em;
 	margin: 0;
 	padding: 1px 0 0 10px;
 	border-bottom: solid 1px #ddd;
+	display: block;
+}
+x-listitem[selected]{
+	background-color: #eef;
 }
