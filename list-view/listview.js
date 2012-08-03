@@ -44,11 +44,12 @@
 						var none = self.attributes['selected'] ? 
 							self.removeAttribute('selected') : 
 							self.setAttribute('selected', null);
+						xtag.fireEvent(self, "itemselected");
 					}
 					
 				}, 150);
 			}
 		}
 	});
-	
+
 })();

@@ -19,7 +19,8 @@
 
 		},
 		"events": {
-			"nodeinserted": "Fires each time a new listitem is added."
+			"nodeinserted": "Fires each time a new listitem is added.",
+			"itemselected": "Fires when a listitem is selected"
 		},
 		"methods": {
 			"getSelected":"Returns an array of selected listitem elements."
