@@ -31,6 +31,7 @@
 	xtag.register('x-listitem', {
 		onInsert: function(){
 			xtag.fireEvent(this,"nodeinserted");
+			this.setAttribute('tabindex',0);
 		},
 		events:{
 			'mousedown': function(e) {

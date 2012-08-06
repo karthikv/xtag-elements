@@ -10,6 +10,7 @@
 		"pager",
 		"panel",
 		"slidebox",
-		"tabbox"
+		"tabbox", 
+		"list-view"
 	]
 }
