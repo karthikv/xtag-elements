@@ -17,6 +17,7 @@ Please review and follow our [best practices](xtag-elements/blob/master/best-pra
 * panel
 * slidebox
 * tabbox
+* list-view
 
 
 ## In Progress
@@ -27,7 +28,6 @@ Please review and follow our [best practices](xtag-elements/blob/master/best-pra
 * dropdown-menu
 * grid-list
 * index-scroller
-* list-view
 * search-list
 * time-picker-analog
 * toggle-switch

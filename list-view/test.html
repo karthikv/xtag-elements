@@ -116,11 +116,11 @@
 	<!--  Listview using data item template, not yet defined -->
 	<x-listview id="listview4">
 		<x-itemtemplate>
-			<h1>{title}</h1>
-			<p>{description}</p>
+			<h1>${title}</h1>
+			<p>${description}</p>
 			<ul>
-				<li>author: {author.name}</li>
-				<li>date: {pubDate|date(mm-dd-yy)}</li>
+				<li>author: ${author.name}</li>
+				<li>date: ${pubDate|date(mm-dd-yy)}</li>
 			</ul>
 		</x-itemtemplate>
 	</x-listview>

@@ -3,11 +3,11 @@
 	xtag.register('x-listview', {
 		onCreate: function(){
 			this.yPos = 0;
-			this.mouseDown = false;			
+			this.mouseDown = false;
 		},
 		events:{
-			'mousemove': function(e){				
-				if (this.mouseDown) {					
+			'mousemove': function(e){
+				if (this.mouseDown) {
 					this.scrollTop = (this.yPos - e.clientY);
 				}
 			},
