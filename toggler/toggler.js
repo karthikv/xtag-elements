@@ -2,6 +2,7 @@
 
 	var attr = 'data-toggled';
 	var toggleState = 'data-toggle-state';
+	var initTargetState = 'data-initial-target-state';
 
 	var getTargets = function(){
 		var targetset = this.getAttribute('data-targetset');
@@ -35,7 +36,7 @@
 			this.setAttribute('tabindex', 0);
 		},
 		onInsert: function(){
-			var force = this.attributes[toggleState] ? this.getAttribute(toggleState) : false;
+			var force = this.attributes[initTargetState] ? this.getAttribute(initTargetState) : false;
 			if (force){
 				var targets = getTargets.call(this);
 				targets.forEach(function(item){
