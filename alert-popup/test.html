@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<title>Alert Popup - X-Tag</title>
+		<link rel="stylesheet" href="alert-popup.css">
+	</head>
+
+	<body>
+		<x-alert data-fade-duration="500" data-secondary-text="Cancel">
+			<h3>Delete all contacts?</h3>
+			Contacts will be deleted forever!
+		</x-alert>
+
+		<script type="text/javascript" src="../lib/x-tag/x-tag.js"></script>
+		<script type="text/javascript" src="alert-popup.js"></script>
+
+		<script>
+			document.addEventListener('DOMComponentsLoaded', function() {
+				var alert = document.querySelector('x-alert');
+				alert.addEventListener('hide', function(event) {
+					var nextAlert = document.createElement('x-alert');
+					nextAlert.innerHTML = 'Delete all e-mails in folder?';
+					nextAlert.fadeDuration = 100;
+					nextAlert.location = 'top';
+					document.body.appendChild(nextAlert);
+				});
+			});
+		</script>
+	</body>
+</html>
