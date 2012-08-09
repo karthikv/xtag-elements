@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<title>Toggle Switch - X-Tag</title>
+		<link rel="stylesheet" href="toggle-switch.css">
+
+		<style>
+			body {
+				padding-top: 50px;
+				padding-left: 150px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<x-toggle-switch>
+			<label>Wireless</label>
+		</x-toggle-switch>
+
+		<script type="text/javascript" src="../lib/x-tag/x-tag.js"></script>
+		<script type="text/javascript" src="toggle-switch.js"></script>
+
+		<script id="next-toggle-html" type="text/template">
+			<label>Notification</label>
+		</script>
+
+		<script>
+			document.addEventListener('DOMComponentsLoaded', function() {
+				var toggleSwitch = document.querySelector('x-toggle-switch');
+				toggleSwitch.addEventListener('on', function(event) {
+					console.log(event);
+				});
+
+				toggleSwitch.addEventListener('off', function(event) {
+					console.log(event);
+				});
+
+				var nextToggleSwitch = document.createElement('x-toggle-switch');
+				nextToggleSwitch.innerHTML = document.getElementById('next-toggle-html').innerHTML;
+				nextToggleSwitch.onText = 'yes';
+				nextToggleSwitch.offText = 'no';
+				document.body.appendChild(nextToggleSwitch);
+			});
+		</script>
+	</body>
+</html>

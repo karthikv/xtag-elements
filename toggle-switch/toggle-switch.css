@@ -1,0 +1,59 @@
+x-toggle-switch {
+	display: block;
+	width: 200px;
+	margin: 15px 0;
+}
+
+/* clearfix */
+x-toggle-switch:before,
+x-toggle-switch:after {
+	content: " ";
+	display: table;
+}
+
+x-toggle-switch:after {
+	clear: both;
+}
+
+x-toggle-switch label {
+	float: left;
+	margin-top: 5px;
+}
+
+.x-toggle-switch-button {
+	position: relative;
+	cursor: pointer;
+	float: right;
+	padding-right: 18px;
+}
+
+.x-toggle-switch-button[data-off] {
+	padding-right: 0;
+	padding-left: 18px;
+}
+
+.x-toggle-switch-button span {
+	display: inline-block;
+	padding: 5px 15px;
+	background: #0099f7;
+	color: #eee;
+}
+
+.x-toggle-switch-button[data-off] span {
+	background: #ccc;
+	color: #222;
+}
+
+.x-toggle-switch-button div {
+	position: absolute;
+	top: -6px;
+	right: 0;
+	width: 20px;
+	height: 40px;
+	background: #777;
+}
+
+.x-toggle-switch-button[data-off] div {
+	left: 0;
+	right: auto;
+}

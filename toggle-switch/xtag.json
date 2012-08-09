@@ -1,8 +1,9 @@
 {	
-	"name": "",
-	"tagName": "",
-	"version": "0.0.0",
-	"description": "",
+	"name": "Toggle Switch",
+	"tagName": "x-toggle-switch",
+	"version": "0.0.1",
+	"author": "Karthik Viswanathan",
+	"description": "An on-off switch that can be toggled with a click.",
 	"images": [],	
 	"categories": [""],
 	"compatibility": {
@@ -13,22 +14,26 @@
 		"android": 2.1,
 		"ios": 4
 	},
-	"documentation":{
+	"documentation": {
 		"description": "",
-		"attributes": { 
-
+		"attributes": {
+			"data-on-text": "Sets the text displayed in on mode.",
+			"data-off-text": "Sets the text displayed in off mode."
 		},
 		"events": {
-			
+			"on": "Triggered when the toggle switch is turned on.",
+			"off": "Triggered when the toggle switch is turned off."
 		},
 		"methods": {
-
+			"toggle": "Toggles the toggle switch."
 		}, 
 		"getters": {
-
+			"onText": "Gets the text displayed in on mode.",
+			"offText": "Gets the text displayed in off mode."
 		},
 		"setters": {
-		
+			"onText": "Sets the text displayed in on mode in the data-on-text attribute.",
+			"offText": "Sets the text displayed in off mode in the data-off-text attribute."
 		}
 	}
 }
