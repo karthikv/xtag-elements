@@ -33,9 +33,10 @@
 
 ### CSS
 
+* Tags SHOULD NOT HAVE PRESENTATIONAL STYLES applied to them!!!
 * Don't use JavaScript for things that are feasible to do in CSS
 * In their default state, tags should appear unstyled, as native browser tags do
-* Use CSS for animations and transitions
+* Use CSS for animations and transitions, default tags should not include presentational animations
 * Use flexbox styles wherever possible to reduce structural JavaScript logic
 
 
