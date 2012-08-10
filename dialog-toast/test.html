@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<title>Toast Dialog - X-Tag</title>
+		<link rel="stylesheet" href="dialog-toast.css">
+	</head>
+
+	<body>
+		<x-toast data-duration="1000" data-exclude-close="true">This is a toast message.</x-toast>
+
+		<script type="text/javascript" src="../lib/x-tag/x-tag.js"></script>
+		<script type="text/javascript" src="dialog-toast.js"></script>
+
+		<script>
+			var toast = document.querySelector('x-toast');
+			toast.addEventListener('hide', function() {
+				var nextToast = document.createElement('x-toast');
+				nextToast.innerHTML = 'This is the next toast message.';
+				nextToast.duration = 2000;
+				nextToast.fadeDuration = 1500;
+				nextToast.location = 'top';
+				document.body.appendChild(nextToast);
+			});
+		</script>
+	</body>
+</html>
