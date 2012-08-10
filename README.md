@@ -13,30 +13,10 @@ Contributions are welcome.
 * Check out x-tag-specs-jul25.pdf for a basic spec of each control.
 
 
-## Completed
-* accordion
-* actionbar
-* autosuggest
-* flipbox
-* map
-* modal
-* overlay
-* pager
-* panel
-* slidebox
-* tabbox
-* list-view
+## Completed  
+[See this etherpad](https://etherpad.mozilla.org/L2F6xohteK)
 
 
 ## In Progress
-* alert-popup
-* date-time-picker
-* dialog-prompt
-* dialog-prompt
-* dropdown-menu
-* grid-list
-* index-scroller
-* search-list
-* time-picker-analog
-* toggle-switch
+[See this etherpad]((https://etherpad.mozilla.org/L2F6xohteK)
 
