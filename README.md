@@ -3,7 +3,7 @@
 Mozilla-supported library of custom HTML elements
 
 ## Best Practices
-Please review and follow our [best practices](/blob/master/best-practices.md) when contributing to the project. All pull requests will be reviewed for adherance.
+Please review and follow our [best practices](https://github.com/mozilla/xtag-elements/blob/master/best-practices.md) when contributing to the project. All pull requests will be reviewed for adherance.
 
 
 ## Contributions
