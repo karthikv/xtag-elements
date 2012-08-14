@@ -90,7 +90,9 @@
 			}, 
 			'click:delegate(.x-slider-range)': function(e, elem){
 				if (e.target.className == 'x-slider-range'){
-					console.log("slider range clicked");
+					selected = elem;
+					mouseMove(e);
+					selected = null;
 				}
 			},
 			'keydown:delegate(.x-slider-knob):keypass(37, 39)': function(e, elem){
