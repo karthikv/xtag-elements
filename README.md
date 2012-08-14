@@ -9,7 +9,7 @@ Please review and follow our [best practices](https://github.com/mozilla/xtag-el
 ## Contributions
 Contributions are welcome.  
 * First checkout [this etherpad](https://etherpad.mozilla.org/L2F6xohteK) doc to see what is being worked on.
-* Read our [best practices](/blob/master/best-practices.md) before starting any development on tags. 
+* Read our [best practices](https://github.com/mozilla/xtag-elements/blob/master/best-practices.md) before starting any development on tags. 
 * Check out x-tag-specs-jul25.pdf for a basic spec of each control.
 
 
