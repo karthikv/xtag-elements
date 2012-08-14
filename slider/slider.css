@@ -1,6 +1,8 @@
-x-slider div.x-slider-label {
-	font-size:18px;
-	font-weight: bold;
+x-slider {
+	display: block;
+}
+x-slider label {
+	
 }
 
 x-slider div.x-slider-container {
@@ -9,7 +11,8 @@ x-slider div.x-slider-container {
 	display: -ms-box;
 	display: -moz-box;
 	display: -webkit-box;
-	width: 250px;
+	width: 100%;
+	
 }
 x-slider div.x-slider-min {
 	box-flex: 0;
@@ -33,10 +36,23 @@ x-slider div.x-slider-range {
 	-webkit-box-flex: 1;
 	margin: 0 5px 0 5px;
 	border: solid 1px red;
+
 }
 x-slider div.x-slider-knob {
 	width: 10px;
 	border: solid 1px #000;
 	cursor: pointer;
 	transform: translate(-50%);
+	-webkit-transform: translate(-50%);
+}
+body.x-tag-slider-drag{
+	user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	cursor: ew-resize;
+}
+body.x-tag-slider-drag div.x-slider-knob {
+	cursor: ew-resize;
 }
