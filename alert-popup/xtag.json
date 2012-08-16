@@ -19,27 +19,24 @@
 		"attributes": {
 			"data-primary-text": "Sets the primary button's text",
 			"data-secondary-text": "Sets the secondary button's text",
-			"data-fade-duration": "Sets the fade in/out duration of the alert",
 			"data-location": "Sets the location (top, bottom, or center) of the alert"
 		},
 		"events": {
-			"show": "Triggered when the alert fades in.",
-			"hide": "Triggered when the alert fades out. Event object contains a dismissType property that holds which button was pressed (primary or secondary)."
+			"show": "Triggered when the alert is shown.",
+			"hide": "Triggered when the alert is hidden. Event object contains a buttonType property that holds which button was pressed (primary or secondary)."
 		},
 		"methods": {
-			"display": "Displays this alert and waits for user input.",
-			"dismiss": "Dismisses this alert given what type of button (primary or secondary) was pressed."
+			"show": "Shows this alert and waits for user input.",
+			"hide": "Hides this alert given what type of button (primary or secondary) was pressed."
 		}, 
 		"getters": {
 			"primaryText": "Gets the primary button's text",
 			"secondaryText": "Gets the secondary button's text",
-			"fadeDuration": "Gets the fade in/out duration of the alert",
 			"location": "Gets the location (top, bottom, or center) of the alert"
 		},
 		"setters": {
 			"primaryText": "Sets the primary button's text in the data-primary-text attribute",
 			"secondaryText": "Sets the secondary button's text in the data-secondary-text attribute",
-			"fadeDuration": "Sets the fade in/out duration of the alert in the data-fade-duration attribute",
 			"location": "Sets the location (top, bottom, or center) of the alert in the data-location attribute"
 		}
 	}

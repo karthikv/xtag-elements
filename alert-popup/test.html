@@ -21,11 +21,15 @@
 			document.addEventListener('DOMComponentsLoaded', function() {
 				var alert = document.querySelector('x-alert');
 				alert.addEventListener('hide', function(event) {
-					var nextAlert = document.createElement('x-alert');
-					nextAlert.innerHTML = 'Delete all e-mails in folder?';
-					nextAlert.fadeDuration = 100;
-					nextAlert.location = 'top';
-					document.body.appendChild(nextAlert);
+					console.log(event);
+
+					if (event.buttonType === 'primary') {
+						var nextAlert = document.createElement('x-alert');
+						nextAlert.innerHTML = 'Your contacts have been deleted.';
+						nextAlert.fadeDuration = 100;
+						nextAlert.location = 'top';
+						document.body.appendChild(nextAlert);
+					}
 				});
 			});
 		</script>
