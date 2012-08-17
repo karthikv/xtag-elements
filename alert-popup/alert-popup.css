@@ -4,12 +4,13 @@ x-alert {
 	text-align: center;
 	background: #222;
 	color: #eee;
+	z-index: 1100;
 
 	/* so that the alert popup doesn't flash for a split second on load */
-	opacity: 0;
+	display: none;
 }
 
-x-alert {
+x-alert[data-active] {
 	/* flex box container to center inner elements */
 	display: -webkit-box;
 	display:    -moz-box;
@@ -90,4 +91,19 @@ x-alert h1, x-alert h2, x-alert h3, x-alert h4, x-alert h5, x-alert h6 {
 	    -ms-border-radius: 5px;
 	     -o-border-radius: 5px;
 	        border-radius: 5px;
+}
+
+.x-alert-overlay {
+	display: none;
+}
+
+.x-alert-overlay[data-active] {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1000;
 }

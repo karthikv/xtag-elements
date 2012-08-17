@@ -2,22 +2,30 @@
 	var primaryTextAttr = 'data-primary-text';
 	var secondaryTextAttr = 'data-secondary-text';
 	var locationAttr = 'data-location';
-	var fadeDurationAttr = 'data-fade-duration';
+
+	var styleActiveAttr = 'data-active';
+	var overlay;
 
 	xtag.register('x-alert', {
 		onCreate: function() {
 			this.primaryText = this.getAttribute(primaryTextAttr);
 			this.secondaryText = this.getAttribute(secondaryTextAttr);
 			this.location = this.getAttribute(locationAttr);
-			this.fadeDuration = this.getAttribute(fadeDurationAttr);
 		},
 
 		onInsert: function() {
 			var self = this;
-
 			var actionsSelector = '.x-alert-actions';
+			var overlaySelector = '.x-alert-overlay';
+
 			if (xtag.query(self, actionsSelector).length === 0) {
 				self.innerHTML += '<div class="' + actionsSelector.substring(1) + '"></div>';
+			}
+
+			if (!overlay) {
+				overlay = document.createElement('div');
+				overlay.className = overlaySelector.substring(1);
+				document.body.appendChild(overlay);
 			}
 
 			var actions = xtag.query(self, actionsSelector)[0];
@@ -34,19 +42,12 @@
 					actions.appendChild(button);
 					button.addEventListener('click', function(event) {
 						event.preventDefault();
-						self.xtag.dismiss(type);
+						self.xtag.hide(type);
 					});
 				}
 			});
 
-			// center the alert relative to the window
-			self.style.left = ( window.innerWidth / 2 - self.offsetWidth / 2 ) + 'px';
-			if (self.location === 'center') {
-				self.style.top = ( window.innerHeight / 2 - self.offsetHeight / 2 ) + 'px';
-			}
-
-			self.style.display = 'none';
-			self.xtag.display();
+			self.xtag.show();
 		},
 
 		setters: {
@@ -60,19 +61,6 @@
 				if (secondaryText) {
 					this.setAttribute(secondaryTextAttr, secondaryText);
 				}
-			},
-
-			fadeDuration: function(fadeDuration) {
-				// default fade duration is 150 ms
-				fadeDuration = parseInt(fadeDuration, 10);
-				
-				// since fadeDuration can be 0, check for NaN explicitly
-				if (isNaN(fadeDuration)) {
-					fadeDuration = 150;
-				}
-
-				this.style[xtag.prefix.js + 'Transition'] = 'opacity ' + fadeDuration + 'ms';
-				this.setAttribute(fadeDurationAttr, fadeDuration);
 			},
 
 			location: function(location) {
@@ -94,10 +82,6 @@
 				return this.getAttribute(secondaryTextAttr);
 			},
 
-			fadeDuration: function() {
-				return parseInt(this.getAttribute(fadeDurationAttr), 10);
-			},
-
 			location: function() {
 				return this.getAttribute(locationAttr);
 			}
@@ -105,33 +89,37 @@
 
 		methods: {
 			/**
-			 * Displays this alert, triggering a show event.
+			 * Shows this alert, triggering a show event.
 			 */
-			display: function() {
+			show: function() {
 				var self = this;
 
-				// only activate if not already displayed
-				if (self.style.display === 'none') {
-					self.style.opacity = 1;
-					self.style.removeProperty('display');
+				// only shown if not already shown
+				if (!this.getAttribute(styleActiveAttr)) {
+					this.setAttribute(styleActiveAttr, 'true');
+					overlay.setAttribute(styleActiveAttr, 'true');
+
+					// center the alert relative to the window
+					self.style.left = ( window.innerWidth / 2 - self.offsetWidth / 2 ) + 'px';
+					if (self.location === 'center') {
+						self.style.top = ( window.innerHeight / 2 - self.offsetHeight / 2 ) + 'px';
+					}
+
 					xtag.fireEvent(self, 'show');
 				}
 			},
 
 			/**
-			 * Dismisses this alert, triggering a hide event.
+			 * Hides this alert, triggering a hide event.
 			 */
-			dismiss: function(type) {
+			hide: function(type) {
 				var self = this;
 
-				// only deactivate if not already hidden
-				if (self.style.display !== 'none') {
-					self.style.opacity = 0;
-
-					setTimeout(function() {
-						self.style.display = 'none';
-						xtag.fireEvent(self, 'hide', { dismissType: type });
-					}, self.fadeDuration);
+				// only hide if not already hidden
+				if (this.getAttribute(styleActiveAttr)) {
+					this.removeAttribute(styleActiveAttr);
+					overlay.removeAttribute(styleActiveAttr);
+					xtag.fireEvent(self, 'hide', { buttonType: type });
 				}
 			}
 		}
