@@ -4,12 +4,6 @@
 	var excludeCloseAttr = 'data-exclude-close';
 
 	xtag.register('x-toast', {
-		onCreate: function() {
-			this.duration = this.getAttribute(durationAttr);
-			this.location = this.getAttribute(locationAttr);
-			this.excludeClose = this.getAttribute(excludeCloseAttr);
-		},
-
 		onInsert: function() {
 			// insert a close button if not already present
 			var closeSelector = '.close';
@@ -29,23 +23,16 @@
 
 		setters: {
 			duration: function(duration) {
-				// default duration is 3 seconds
-				duration = parseInt(duration, 10) || 3000;
 				this.setAttribute(durationAttr, duration);
 			},
 
 			location: function(location) {
-				// default location is bottom
-				if (location !== 'top') {
-					location = 'bottom';
-				}
-
 				this.setAttribute(locationAttr, location);
 			},
 
 			excludeClose: function(excludeClose) {
 				if (excludeClose) {
-					this.setAttribute(excludeCloseAttr, 'true');
+					this.setAttribute(excludeCloseAttr, excludeClose);
 				} else {
 					this.removeAttribute(excludeCloseAttr);
 				}
@@ -54,15 +41,23 @@
 
 		getters: {
 			duration: function() {
-				return parseInt(this.getAttribute(durationAttr), 10);
+				// default duration is 3 seconds
+				return parseInt(this.getAttribute(durationAttr), 10) || 3000;
 			},
 
 			location: function() {
-				return this.getAttribute(locationAttr);
+				var location = this.getAttribute(locationAttr);
+
+				// default location is bottom
+				if (location !== 'top') {
+					location = 'bottom';
+				}
+
+				return location;
 			},
 
 			excludeClose: function() {
-				return this.getAttribute(excludeCloseAttr);
+				return !!this.getAttribute(excludeCloseAttr);
 			}
 		},
 

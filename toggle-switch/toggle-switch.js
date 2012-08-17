@@ -6,11 +6,6 @@
 	var styleOffAttr = 'data-off';
 
 	xtag.register('x-toggle-switch', {
-		onCreate: function() {
-			this.onText = this.getAttribute(onTextAttr);
-			this.offText = this.getAttribute(offTextAttr);
-		},
-
 		onInsert: function() {
 			if (xtag.query(this, buttonSelector).length === 0) {
 				// add button HTML dynamically
@@ -58,23 +53,21 @@
 
 		setters: {
 			onText: function(onText) {
-				onText = onText || 'on';
 				this.setAttribute(onTextAttr, onText);
 			},
 
 			offText: function(offText) {
-				offText = offText || 'off';
 				this.setAttribute(offTextAttr, offText);
 			}
 		},
 
 		getters: {
 			onText: function(onText) {
-				return this.getAttribute(onTextAttr);
+				return this.getAttribute(onTextAttr) || 'on';
 			},
 
 			offText: function(offText) {
-				return this.getAttribute(offTextAttr);
+				return this.getAttribute(offTextAttr) || 'off';
 			}
 		},
 

@@ -7,12 +7,6 @@
 	var overlay;
 
 	xtag.register('x-alert', {
-		onCreate: function() {
-			this.primaryText = this.getAttribute(primaryTextAttr);
-			this.secondaryText = this.getAttribute(secondaryTextAttr);
-			this.location = this.getAttribute(locationAttr);
-		},
-
 		onInsert: function() {
 			var self = this;
 			var actionsSelector = '.x-alert-actions';
@@ -52,30 +46,22 @@
 
 		setters: {
 			primaryText: function(primaryText) {
-				// defaults to OK
-				primaryText = primaryText || 'OK';
 				this.setAttribute(primaryTextAttr, primaryText);
 			},
 
 			secondaryText: function(secondaryText) {
-				if (secondaryText) {
-					this.setAttribute(secondaryTextAttr, secondaryText);
-				}
+				this.setAttribute(secondaryTextAttr, secondaryText);
 			},
 
 			location: function(location) {
-				// default location is center
-				if (location !== 'top' && location !== 'bottom') {
-					location = 'center';
-				}
-
 				this.setAttribute(locationAttr, location);
 			}
 		},
 
 		getters: {
 			primaryText: function() {
-				return this.getAttribute(primaryTextAttr);
+				// defaults to OK
+				return this.getAttribute(primaryTextAttr) || 'OK';
 			},
 
 			secondaryText: function() {
@@ -83,7 +69,14 @@
 			},
 
 			location: function() {
-				return this.getAttribute(locationAttr);
+				var location = this.getAttribute(locationAttr);
+
+				// default location is center
+				if (location !== 'top' && location !== 'bottom') {
+					location = 'center';
+				}
+
+				return location;
 			}
 		},
 
