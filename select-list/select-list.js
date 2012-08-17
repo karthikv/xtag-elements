@@ -32,12 +32,6 @@
 	});
 
 	xtag.register('x-select-list', {
-		onCreate: function() {
-			this.multiSelect = this.getAttribute(multiSelectAttr);
-			this.okText = this.getAttribute(okTextAttr);
-			this.location = this.getAttribute(locationAttr);
-		},
-
 		onInsert: function() {
 			var self = this;
 			var okSelector = '.x-select-ok';
@@ -82,39 +76,40 @@
 
 		setters: {
 			multiSelect: function(multiSelect) {
-				if (multiSelect) {
-					this.setAttribute(multiSelectAttr, 'true');
+				if (this.multiSelect) {
+					this.setAttribute(multiSelectAttr, multiSelect);
 				} else {
 					this.removeAttribute(multiSelectAttr);
 				}
 			},
 
 			okText: function(okText) {
-				okText = okText || 'OK';
 				this.setAttribute(okTextAttr, okText);
 			},
 
 			location: function(location) {
-				// default location is center
-				if (location !== 'top' && location !== 'bottom') {
-					location = 'center';
-				}
-
 				this.setAttribute(locationAttr, location);
 			}
 		},
 
 		getters: {
 			multiSelect: function() {
-				return this.getAttribute(multiSelectAttr);
+				return !!this.getAttribute(multiSelectAttr);
 			},
 
 			okText: function() {
-				return this.getAttribute(okTextAttr);
+				return this.getAttribute(okTextAttr) || 'OK';
 			},
 
 			location: function() {
-				return this.getAttribute(locationAttr);
+				var location = this.getAttribute(locationAttr);
+
+				// default location is center
+				if (location !== 'top' && location !== 'bottom') {
+					location = 'center';
+				}
+
+				return location;
 			}
 		},
 
