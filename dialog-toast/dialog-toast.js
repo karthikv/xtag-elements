@@ -1,24 +1,30 @@
 (function(window, document, undefined) {
 	var durationAttr = 'data-duration';
 	var locationAttr = 'data-location';
-	var excludeCloseAttr = 'data-exclude-close';
+	var closeSelector = '.x-toast-close';
 
 	xtag.register('x-toast', {
 		onInsert: function() {
-			// insert a close button if not already present
-			var closeSelector = '.close';
-			if (!this.excludeClose && xtag.query(this, closeSelector).length === 0) {
-				this.innerHTML += '<a href="#close" class="close">&#215;</a>';
-
-				var close = xtag.query(this, closeSelector)[0];
-				var self = this;
-				close.addEventListener('click', function(event) {
-					event.preventDefault();
-					self.xtag.hide();
-				});
+			// insert a close button if not already present; don't show one on touch
+			// devices, as the whole toast message acts as a dismiss target
+			if (!('ontouchend' in document) && xtag.query(this, closeSelector).length === 0) {
+				this.innerHTML += '<a href="#close" class="' + closeSelector.substring(1) +
+					'">&#215;</a>';
 			}
 
 			this.xtag.show();
+		},
+
+		events: {
+			'click:delegate(.x-toast-close)': function(event, dialogToast) {
+				event.preventDefault();
+				dialogToast.xtag.hide();
+			},
+
+			'touchend': function(event) {
+				event.preventDefault();
+				this.xtag.hide();
+			}
 		},
 
 		setters: {
