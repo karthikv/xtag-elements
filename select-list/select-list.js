@@ -69,11 +69,7 @@
 		},
 
 		events: {
-			click: function(event) {
-				event.stopPropagation();
-			},
-
-			touchend: function(event) {
+			'click:touch': function(event) {
 				event.stopPropagation();
 			},
 

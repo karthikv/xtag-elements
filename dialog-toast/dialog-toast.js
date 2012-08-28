@@ -16,12 +16,7 @@
 		},
 
 		events: {
-			'click:delegate(.x-toast-close)': function(event, dialogToast) {
-				event.preventDefault();
-				dialogToast.xtag.hide();
-			},
-
-			'touchend': function(event) {
+			'click:touch': function(event) {
 				event.preventDefault();
 				this.xtag.hide();
 			}
