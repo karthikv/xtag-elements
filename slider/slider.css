@@ -35,12 +35,13 @@ x-slider div.x-slider-range {
 	-moz-box-flex: 1;
 	-webkit-box-flex: 1;
 	margin: 0 5px 0 5px;
-	border: solid 1px red;
+	border: solid 1px #ddd;
 
 }
 x-slider div.x-slider-knob {
 	width: 10px;
-	border: solid 1px #000;
+	border: solid 1px #222;
+	background-color: #222;
 	cursor: pointer;
 	position: relative;
 	transform: translate(-50%);
