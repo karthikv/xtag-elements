@@ -35,11 +35,11 @@
 				xtag.fireEvent(selected,'change', { value: selected.xtag.input.value });
 
 				if (selected.dataset.snap != undefined){
-					selected.xtag.knob.style.marginLeft = ((step/(selected.xtag.stepTable.length-1))*100) + '%';
+					selected.xtag.knob.style.left = ((step/(selected.xtag.stepTable.length-1))*100) + '%';
 				}
 			}
 			if (selected.dataset.snap == undefined){
-				selected.xtag.knob.style.marginLeft = position + '%';
+				selected.xtag.knob.style.left = position + '%';
 			}
 			window.getSelection().removeAllRanges();
 		}
@@ -75,7 +75,7 @@
 				Number(this.dataset.max), 
 				Number(this.dataset.step));
 			if (this.dataset.startValue != undefined){
-				this.xtag.knob.style.marginLeft = ((Number(this.dataset.startValue)/(Number(this.dataset.max)))*100) + '%';
+				this.xtag.knob.style.left = ((Number(this.dataset.startValue)/(Number(this.dataset.max)))*100) + '%';
 			}
 			this.xtag.mouseMoveFn = null;
 		},
@@ -104,7 +104,7 @@
 				}
 				step = e.keyCode == 37 ? step - 1 : step + 1;
 				if (step >= 0 && step <= elem.xtag.stepTable.length - 1){
-					elem.xtag.knob.style.marginLeft = (step/(elem.xtag.stepTable.length-1)*100) + '%';
+					elem.xtag.knob.style.left = (step/(elem.xtag.stepTable.length-1)*100) + '%';
 					elem.xtag.input.value = elem.xtag.stepTable[step];
 					xtag.fireEvent(elem,'change', { value: elem.xtag.stepTable[step] });
 				}
