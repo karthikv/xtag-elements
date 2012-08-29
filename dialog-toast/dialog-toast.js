@@ -1,6 +1,7 @@
 (function(window, document, undefined) {
 	var durationAttr = 'data-duration';
 	var locationAttr = 'data-location';
+	var excludeCloseAttr = 'data-exclude-close';
 	var closeSelector = '.x-toast-close';
 
 	xtag.register('x-toast', {
