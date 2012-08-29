@@ -24,6 +24,22 @@
 		}
 	});
 
+	var singleTouch = false;
+	window.addEventListener('touchstart', function(event) {
+		if (event.touches.length === 1) {
+			singleTouch = true;
+		} else {
+			singleTouch = false;
+		}
+	});
+
+	window.addEventListener('touchend', function(event) {
+		// only hide when a single touch occurs
+		if (singleTouch) {
+			hideVisibleSelectLists();
+		}
+	});
+
 	window.addEventListener('keyup', function(event) {
 		// hide when escape key is pressed
 		if (event.keyCode === 27) {
@@ -53,7 +69,7 @@
 		},
 
 		events: {
-			click: function(event) {
+			'click:touch': function(event) {
 				event.stopPropagation();
 			},
 
