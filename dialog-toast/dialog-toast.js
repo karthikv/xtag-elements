@@ -1,6 +1,7 @@
 (function(window, document, undefined) {
 	var durationAttr = 'data-duration';
 	var locationAttr = 'data-location';
+	var excludeCloseAttr = 'data-exclude-close';
 	var closeSelector = '.x-toast-close';
 
 	xtag.register('x-toast', {
@@ -16,12 +17,7 @@
 		},
 
 		events: {
-			'click:delegate(.x-toast-close)': function(event, dialogToast) {
-				event.preventDefault();
-				dialogToast.xtag.hide();
-			},
-
-			'touchend': function(event) {
+			'click:touch': function(event) {
 				event.preventDefault();
 				this.xtag.hide();
 			}
