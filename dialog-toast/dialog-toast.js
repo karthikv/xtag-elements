@@ -1,7 +1,6 @@
 (function(window, document, undefined) {
 	var durationAttr = 'data-duration';
 	var locationAttr = 'data-location';
-	var excludeCloseAttr = 'data-exclude-close';
 	var closeSelector = '.x-toast-close';
 
 	xtag.register('x-toast', {
@@ -30,14 +29,6 @@
 
 			location: function(location) {
 				this.setAttribute(locationAttr, location);
-			},
-
-			excludeClose: function(excludeClose) {
-				if (excludeClose) {
-					this.setAttribute(excludeCloseAttr, excludeClose);
-				} else {
-					this.removeAttribute(excludeCloseAttr);
-				}
 			}
 		},
 
@@ -56,10 +47,6 @@
 				}
 
 				return location;
-			},
-
-			excludeClose: function() {
-				return !!this.getAttribute(excludeCloseAttr);
 			}
 		},
 
